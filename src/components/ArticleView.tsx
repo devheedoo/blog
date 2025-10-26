@@ -2,8 +2,12 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
+import rehypeHighlight from 'rehype-highlight'
 import { Badge } from '@/components/ui/badge'
 import type { Article } from '@/types/Article'
+
+// Highlight.js 테마 - 라이트/다크 모드 모두 지원하는 atom-one 테마
+import 'highlight.js/styles/atom-one-dark.css'
 
 interface ArticleViewProps {
   article: Article
@@ -36,10 +40,10 @@ export function ArticleView({ article }: ArticleViewProps) {
           ))}
         </div>
       </header>
-      <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-code:rounded prose-code:bg-neutral-100 prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-code:before:content-[''] prose-code:after:content-[''] dark:prose-code:bg-neutral-800 prose-pre:bg-neutral-100 dark:prose-pre:bg-neutral-800">
+      <div className="prose prose-neutral dark:prose-invert max-w-none lg:prose-lg">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw, rehypeSanitize]}
+          rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeHighlight]}
         >
           {article.content}
         </ReactMarkdown>
