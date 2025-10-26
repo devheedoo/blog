@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { ArticleView } from '@/components/ArticleView'
 import { Button } from '@/components/ui/button'
-import { loadArticleBySlug, type Article } from '@/lib/articles'
+import { loadArticleBySlug } from '@/lib/articles'
+import { type Article } from '@/types/Article'
 import { ArrowLeft } from 'lucide-react'
 
 export function Article() {

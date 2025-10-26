@@ -2,12 +2,8 @@ import { useEffect, useState } from 'react'
 import { ArticleCard } from '@/components/ArticleCard'
 import { TagFilter } from '@/components/TagFilter'
 import { Input } from '@/components/ui/input'
-import {
-  loadAllArticles,
-  getAllTags,
-  filterArticles,
-  type Article,
-} from '@/lib/articles'
+import { loadAllArticles, getAllTags, filterArticles } from '@/lib/articles'
+import { type Article } from '@/types/Article'
 
 export function Home() {
   const [articles, setArticles] = useState<Article[]>([])

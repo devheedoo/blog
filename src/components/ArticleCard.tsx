@@ -7,7 +7,7 @@ import {
   CardContent,
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import type { ArticleMeta } from '@/lib/articles'
+import type { ArticleMeta } from '@/types/ArticleMeta'
 
 interface ArticleCardProps {
   article: ArticleMeta

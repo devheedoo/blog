@@ -3,7 +3,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import rehypeSanitize from 'rehype-sanitize'
 import { Badge } from '@/components/ui/badge'
-import type { Article } from '@/lib/articles'
+import type { Article } from '@/types/Article'
 
 interface ArticleViewProps {
   article: Article

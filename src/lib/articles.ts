@@ -1,16 +1,5 @@
+import type { Article } from '@/types/Article'
 import matter from 'gray-matter'
-
-export interface ArticleMeta {
-  title: string
-  date: string
-  tags: string[]
-  description: string
-  slug: string
-}
-
-export interface Article extends ArticleMeta {
-  content: string
-}
 
 // Vite의 import.meta.glob을 사용하여 모든 마크다운 파일 로드
 const articleModules = import.meta.glob('../../articles/*.md', {
